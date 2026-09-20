@@ -1,0 +1,27 @@
+[general]
+name=Drone Image Co-registration
+qgisMinimumVersion=3.16
+description=AROSICS-based local co-registration for drone imagery
+version=1.0.1
+author=Martin Aborgeh
+email=aborgehmartin29@gmail.com
+about=Co-registers overlapping drone imagery using AROSICS NCC-based shift
+    detection. Supports both translation (zero-resampling) and thin-plate
+    spline correction modes. Accepts a folder of tiles or a single GeoTIFF
+    for both reference and target inputs.
+homepage=
+tracker=
+repository=
+tags=drone,co-registration,arosics,imagery,raster,georeferencing
+category=Raster
+icon=
+experimental=False
+deprecated=False
+server=False
+changelog=1.0.1
+    - Fixed a bug where opening the plugin before its Python dependencies
+      (rasterio, arosics, etc.) were installed raised
+      "ModuleNotFoundError: No module named 'rasterio'" instead of showing
+      the dependency-install banner. Dialog import no longer requires
+      rasterio/numpy to be present; the Install Dependencies flow now
+      always gets a chance to run first.
